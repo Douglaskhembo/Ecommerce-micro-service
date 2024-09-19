@@ -1,11 +1,14 @@
 package com.ecommerce.controller;
 
 import com.ecommerce.records.CustomerRequest;
+import com.ecommerce.records.CustomerResponse;
 import com.ecommerce.service.CustomerService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
@@ -18,7 +21,8 @@ public class CustomerController {
     public ResponseEntity<String> createCustomer(
             @RequestBody @Valid CustomerRequest request
     ){
-        return ResponseEntity.ok(customerService.createCustomer(request));
+        String createCustomer = customerService.createCustomer(request);
+        return ResponseEntity.ok(createCustomer);
     }
 
     @PutMapping("/updateCustomer")
@@ -27,5 +31,11 @@ public class CustomerController {
     ){
         customerService.updateCustomer(request);
         return ResponseEntity.accepted().build();
+    }
+
+    @GetMapping("/allCustomers")
+    public ResponseEntity<List<CustomerResponse>> findAllCustomers(){
+        List<CustomerResponse> customerResponses = customerService.findAllCustomers();
+        return ResponseEntity.ok(customerResponses);
     }
 }

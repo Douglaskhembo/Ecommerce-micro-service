@@ -4,11 +4,16 @@ import com.ecommerce.exception.CustomerNotFoundException;
 import com.ecommerce.mapper.CustomerMapper;
 import com.ecommerce.module.Customer;
 import com.ecommerce.records.CustomerRequest;
+import com.ecommerce.records.CustomerResponse;
 import com.ecommerce.repository.CustomerRepository;
 import com.ecommerce.service.CustomerService;
 import lombok.RequiredArgsConstructor;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.stereotype.Service;
+
+import java.util.Collections;
+import java.util.List;
+import java.util.stream.Collectors;
 
 import static java.lang.String.format;
 
@@ -47,5 +52,12 @@ public class CustomerServiceImpl implements CustomerService {
         if (request.address() != null){
             customer.setAddress(request.address());
         }
+    }
+    @Override
+    public List<CustomerResponse> findAllCustomers() {
+        return customerRepository.findAll()
+                .stream()
+                .map(mapper::fromCustomer)
+                .collect(Collectors.toList());
     }
 }
