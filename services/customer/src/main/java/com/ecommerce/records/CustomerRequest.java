@@ -1,12 +1,11 @@
 package com.ecommerce.records;
 
-import com.ecommerce.module.Address;
-import jakarta.persistence.Column;
+import com.ecommerce.model.Address;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotNull;
 
 public record CustomerRequest(
-        Long id,
+        Long cust_id,
         @NotNull(message = "First name is required")
         String firstName,
         @NotNull(message = "last name is required")
