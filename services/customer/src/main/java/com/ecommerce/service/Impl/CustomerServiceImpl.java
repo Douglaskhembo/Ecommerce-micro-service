@@ -60,4 +60,21 @@ public class CustomerServiceImpl implements CustomerService {
                 .map(mapper::fromCustomer)
                 .collect(Collectors.toList());
     }
+
+    @Override
+    public Boolean getCustomerById(Long customerId) {
+        return customerRepository.findById(customerId).isPresent();
+    }
+
+    @Override
+    public CustomerResponse findCustomerById(Long customerId) {
+        return customerRepository.findById(customerId)
+                .map(mapper::fromCustomer)
+                .orElseThrow(()-> new CustomerNotFoundException(format("No customer found with provided ID:: %", customerId)));
+    }
+
+    @Override
+    public void deleteCustomerById(Long customerId) {
+        customerRepository.deleteById(customerId);
+    }
 }
