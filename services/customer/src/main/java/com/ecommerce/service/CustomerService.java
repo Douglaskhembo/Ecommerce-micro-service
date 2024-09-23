@@ -1,6 +1,5 @@
 package com.ecommerce.service;
 
-import com.ecommerce.module.Customer;
 import com.ecommerce.records.CustomerRequest;
 import com.ecommerce.records.CustomerResponse;
 

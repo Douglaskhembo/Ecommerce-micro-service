@@ -1,4 +1,4 @@
-package com.ecommerce.module;
+package com.ecommerce.model;
 
 import lombok.*;
 import org.springframework.validation.annotation.Validated;

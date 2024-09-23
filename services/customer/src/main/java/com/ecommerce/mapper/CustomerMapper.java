@@ -1,6 +1,6 @@
 package com.ecommerce.mapper;
 
-import com.ecommerce.module.Customer;
+import com.ecommerce.model.Customer;
 import com.ecommerce.records.CustomerRequest;
 import com.ecommerce.records.CustomerResponse;
 import org.springframework.stereotype.Service;

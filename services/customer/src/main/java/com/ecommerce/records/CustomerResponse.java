@@ -1,11 +1,9 @@
 package com.ecommerce.records;
 
-import com.ecommerce.module.Address;
-import jakarta.validation.constraints.Email;
-import jakarta.validation.constraints.NotNull;
+import com.ecommerce.model.Address;
 
 public record CustomerResponse(
-        Long id,
+        Long cust_id,
         String firstName,
         String lastName,
         String email,
