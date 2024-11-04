@@ -14,7 +14,7 @@ import java.util.List;
 public class Category {
     @Id
     @GeneratedValue
-    private Integer categ_id;
+    private Integer categId;
     private String name;
     private String description;
     @OneToMany(mappedBy = "category", cascade = CascadeType.REMOVE)

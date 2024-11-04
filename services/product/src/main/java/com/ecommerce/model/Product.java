@@ -14,7 +14,7 @@ import java.math.BigDecimal;
 public class Product {
     @Id
     @GeneratedValue
-    private Integer prd_id;
+    private Integer prdId;
     private String name;
     private String description;
     private double availableQuantity;
