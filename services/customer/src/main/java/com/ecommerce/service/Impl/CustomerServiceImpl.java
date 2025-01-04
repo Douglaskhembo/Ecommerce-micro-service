@@ -25,14 +25,14 @@ public class CustomerServiceImpl implements CustomerService {
     @Override
     public String createCustomer(CustomerRequest request) {
         var customer = customerRepository.save(mapper.toCustomer(request));
-        return String.valueOf(customer.getId());
+        return String.valueOf(customer.getCust_id());
     }
 
     @Override
     public void updateCustomer(CustomerRequest request) {
-        var customer = customerRepository.findById(request.id())
+        var customer = customerRepository.findById(request.cust_id())
                 .orElseThrow(()-> new CustomerNotFoundException(
-                        format("Cannot update customer:: No customer found with provided ID:: %", request.id())
+                        format("Cannot update customer:: No customer found with provided ID:: %", request.cust_id())
                 ));
         mergeCustomer(customer, request);
         customerRepository.save(customer);

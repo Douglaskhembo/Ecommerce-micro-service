@@ -1,5 +1,6 @@
-package com.ecommerce.model;
+package com.ecommerce.product.model;
 
+import com.ecommerce.category.Category;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -14,7 +15,7 @@ import java.math.BigDecimal;
 public class Product {
     @Id
     @GeneratedValue
-    private Integer prd_id;
+    private Integer prdId;
     private String name;
     private String description;
     private double availableQuantity;

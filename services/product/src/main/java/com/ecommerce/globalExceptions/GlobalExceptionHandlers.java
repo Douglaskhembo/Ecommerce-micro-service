@@ -1,7 +1,7 @@
 package com.ecommerce.globalExceptions;
 
-import com.ecommerce.exception.CustomerNotFoundException;
-import org.springframework.http.HttpStatus;
+import com.ecommerce.exception.ProductPurchaseException;
+import jakarta.persistence.EntityNotFoundException;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
@@ -10,13 +10,22 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 import java.util.HashMap;
 
+import static org.springframework.http.HttpStatus.BAD_REQUEST;
+
 @RestControllerAdvice
 public class GlobalExceptionHandlers {
 
-    @ExceptionHandler(CustomerNotFoundException.class)
-    public ResponseEntity<String> handler(CustomerNotFoundException exp){
+    @ExceptionHandler(ProductPurchaseException.class)
+    public ResponseEntity<String> handler(ProductPurchaseException exp){
         return ResponseEntity
-                .status(HttpStatus.NOT_FOUND)
+                .status(BAD_REQUEST)
+                .body(exp.getMessage());
+    }
+
+    @ExceptionHandler(EntityNotFoundException.class)
+    public ResponseEntity<String> handler(EntityNotFoundException exp){
+        return ResponseEntity
+                .status(BAD_REQUEST)
                 .body(exp.getMessage());
     }
 
@@ -30,7 +39,7 @@ public class GlobalExceptionHandlers {
                     errors.put(fieldName, errorMessage);
                 });
         return ResponseEntity
-                .status(HttpStatus.BAD_REQUEST)
+                .status(BAD_REQUEST)
                 .body(new ErrorResponse(errors));
     }
 }

@@ -14,7 +14,7 @@ public class CustomerMapper {
         }
 
         return Customer.builder()
-                .id(request.id())
+                .cust_id(request.cust_id())
                 .firstName(request.firstName())
                 .lastName(request.lastName())
                 .email(request.email())
@@ -24,7 +24,7 @@ public class CustomerMapper {
 
     public CustomerResponse fromCustomer(Customer customer) {
         return new CustomerResponse(
-                customer.getId(),
+                customer.getCust_id(),
                 customer.getFirstName(),
                 customer.getLastName(),
                 customer.getEmail(),
