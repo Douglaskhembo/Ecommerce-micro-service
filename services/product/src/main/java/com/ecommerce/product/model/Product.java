@@ -1,5 +1,6 @@
-package com.ecommerce.model;
+package com.ecommerce.product.model;
 
+import com.ecommerce.category.Category;
 import jakarta.persistence.*;
 import lombok.*;
 
