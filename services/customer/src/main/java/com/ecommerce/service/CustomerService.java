@@ -12,7 +12,7 @@ public interface CustomerService {
 
     Boolean getCustomerById(Long customerId);
 
-    CustomerResponse findCustomerById(Long customerId);
+    CustomerResponse findById(Long customerId);
 
     void deleteCustomerById(Long customerId);
 }

@@ -14,7 +14,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Customer {
 
     @Id
-    private Long cust_id;
+    private String cust_id;
     @Column(name = "cust_first_name")
     private String firstName;
     @Column(name = "cust_last_name")
