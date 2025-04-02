@@ -1,7 +1,7 @@
 package com.ecommerce.customer;
 
 public record CustomerResponse(
-        Integer custId,
+        String custId,
         String firstName,
         String lastName,
         String email
