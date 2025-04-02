@@ -30,7 +30,7 @@ public class CustomerServiceImpl implements CustomerService {
 
     @Override
     public void updateCustomer(CustomerRequest request) {
-        var customer = customerRepository.findById(request.cust_id())
+        var customer = customerRepository.findById(Long.valueOf(request.cust_id()))
                 .orElseThrow(()-> new CustomerNotFoundException(
                         format("Cannot update customer:: No customer found with provided ID:: %", request.cust_id())
                 ));

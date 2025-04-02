@@ -9,10 +9,7 @@ public interface CustomerService {
     String createCustomer(CustomerRequest request);
     void updateCustomer(CustomerRequest request);
     List<CustomerResponse> findAllCustomers();
-
     Boolean getCustomerById(Long customerId);
-
     CustomerResponse findById(Long customerId);
-
     void deleteCustomerById(Long customerId);
 }

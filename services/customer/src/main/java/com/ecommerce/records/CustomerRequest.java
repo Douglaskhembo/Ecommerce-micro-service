@@ -5,7 +5,7 @@ import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotNull;
 
 public record CustomerRequest(
-        Long cust_id,
+        String cust_id,
         @NotNull(message = "First name is required")
         String firstName,
         @NotNull(message = "last name is required")
