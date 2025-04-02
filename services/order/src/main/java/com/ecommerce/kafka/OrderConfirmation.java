@@ -1,4 +1,4 @@
-package com.ecommerce.kafaka;
+package com.ecommerce.kafka;
 
 import com.ecommerce.customer.CustomerResponse;
 import com.ecommerce.enumeration.PaymentMethod;
