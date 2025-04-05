@@ -10,6 +10,7 @@
         <module name="config-server" />
         <module name="product" />
         <module name="discovery" />
+        <module name="gateway" />
         <module name="customer" />
       </profile>
       <profile name="Annotation profile for payment" enabled="true">
@@ -30,6 +31,7 @@
       <module name="config-server" options="-parameters" />
       <module name="customer" options="-parameters" />
       <module name="discovery" options="-parameters" />
+      <module name="gateway" options="-parameters" />
       <module name="notification" options="-parameters" />
       <module name="order" options="-parameters" />
       <module name="payment" options="-parameters" />
