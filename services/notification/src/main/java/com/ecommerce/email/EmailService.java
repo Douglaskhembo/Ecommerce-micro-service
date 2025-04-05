@@ -99,7 +99,7 @@ public class EmailService {
             mailSender.send(mimeMessage);
             log.info(String.format("Email sent successfully to %s with subject %s", destinationEmail, subject));
         }catch (MessagingException e){
-            log.warn("Failed to send email to " + destinationEmail);
+            log.warn("Failed to send email to " + destinationEmail, e);
         }
     }
 }
